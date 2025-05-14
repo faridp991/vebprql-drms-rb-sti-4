@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+  <meta charset="UTF-8">
+  <title>Tədbir əlavə et</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h2>Yeni tədbir əlavə et</h2>
+  <form id="event-form">
+    <input type="text" id="title" placeholder="Başlıq" required>
+    <textarea id="desc" placeholder="Təsvir" required></textarea>
+    <input type="date" id="date" required>
+    <button type="submit">Əlavə et</button>
+  </form>
+  <script src="script.js"></script>
+</body>
+</html>
+<script>
+    document.getElementById('event-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const title = document.getElementById('title').value;
+      const desc = document.getElementById('desc').value;
+      const date = document.getElementById('date').value;
+  
+      const events = JSON.parse(localStorage.getItem('events')) || [];
+      events.push({ title, desc, date });
+      localStorage.setItem('events', JSON.stringify(events));
+  
+      window.location.href = 'index.html';
+    });
+  </script>
+  

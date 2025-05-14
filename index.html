@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EventHub</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>EventHub</h1>
+    <input type="text" id="search" placeholder="Tədbir axtar...">
+    <button onclick="location.href='add.html'">Tədbir əlavə et</button>
+    <button onclick="location.href='login.html'">Login</button>
+  </header>
+
+  <main id="event-list"></main>
+  
+  <div id="modal" class="modal hidden">
+    <div class="modal-content">
+      <span id="close-modal">&times;</span>
+      <h2 id="modal-title"></h2>
+      <p id="modal-desc"></p>
+      <p id="modal-date"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
